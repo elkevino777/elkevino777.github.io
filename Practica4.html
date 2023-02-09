@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layouts</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        header {
+            background-color: rgb(0, 0, 0);
+            padding: 10px;
+            text-align: center;
+            font-size: 19px;
+            color: rgb(0, 0, 0);
+        }
+        nav{
+            float: left;
+            width: 30%;
+            height: 600px;
+            background-color: rgb(255, 197, 244);
+            padding: 20px;
+        }
+        nav ul{
+            list-style-type: none;
+            padding: 0;
+        }
+        article{
+            float: left;
+            padding: 20px;
+            width: 70%;
+            background-color: rgb(255, 205, 188);
+            height: 600px;
+        }
+        section ::after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+        footer{
+            background-color: gray;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+        @media(max-width: 600px){
+            nav, article {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <center>
+            <font color="white"><h2>SEX AND LOVE</h2></font>
+        </center>
+        <section>
+            <nav>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=wkD1qnMMzfw">4 PALABRAS: ARTE</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=n-JSIBNsPmg">Sex & Love</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=3RoEreliOxo">Party en el barrio</a></li>
+                </ul>
+            </nav>
+            <article>
+                <h1>Lista de telefonos</h1>
+                <p>
+                    De lunes a domingo voy todo viciado
+                    La antorcha prendida luz por todos lados
+                    Picando y picando y yo no te eh encontrado
+                    Las manecillas giran ya hay zombies sonando
+                    Bajandome la vida y no voy ni armado
+                    Bebiendome la leche a sorbos y a tragos
+                    Te vi así de frente que tremendo impacto, la Picarte un poquito dime.
+                    Si hay que ser minero
+                    Romper el pico en el hierro
+                    No importa el creeper que venga pa que sepas que te quiero
+                    Como un buen minero, me juego la vida por tiiiii.
+                    Si hay que ser minero
+                    Romper el pico en el hierro
+                    No importa el creeper que venga pa que sepas que te quiero
+                    Como un buen minero, me juego la vida por tiiiii.
+                </p>
+            </article>
+        </section>
+        <footer>
+            <p>Compra pajas &copy; 2023</p>
+        </footer>
+    </header>
+</body>
+<h6>
+    Kevin René Armenta Valenzuela 4AVP 08/02/23
+</h6>
+</html>
