@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Juego de Adivinanza de Números</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        #game-container {
+            margin: 20px auto;
+            padding: 20px;
+            width: 300px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body style="background-color: #a9bbcf;">
+    <div id="game-container">
+        <h1>Adivina el número (entre 1 y 100)</h1>
+        <p>Ingresa un número y presiona "Adivinar". Te diré si el número es mayor o menor.</p>
+        <input type="text" id="guessInput">
+        <input type="submit" value="Adivinar" id="guessButton">
+        <p id="message"></p>
+        <button id="restartButton" style="display: none;">Reiniciar Juego</button>
+    </div>
+    
+    <script>
+        let numeroObjetivo;
+        let intentos = 0;
+
+        const guessInput = document.getElementById('guessInput');
+        const guessButton = document.getElementById('guessButton');
+        const message = document.getElementById('message');
+        const restartButton = document.getElementById('restartButton');
+
+        restartButton.addEventListener('click', reiniciarJuego);
+
+        function iniciarJuego() {
+            numeroObjetivo = Math.floor(Math.random() * 100) + 1;
+            intentos = 0;
+            guessInput.value = '';
+            message.textContent = '';
+            restartButton.style.display = 'none';
+            guessInput.disabled = false;
+            guessButton.disabled = false;
+        }
+
+        function reiniciarJuego() {
+            iniciarJuego();
+        }
+
+        function verificarAdivinanza() {
+            const guess = parseInt(guessInput.value);
+            intentos++;
+
+            if (guess === numeroObjetivo) {
+                message.textContent = `¡Felicidades! Adivinaste el número en ${intentos} intentos.`;
+                message.style.color = 'green';
+                guessInput.disabled = true;
+                guessButton.disabled = true;
+                restartButton.style.display = 'block';
+            } else if (guess < numeroObjetivo) {
+                message.textContent = 'El número es mayor. Intenta nuevamente.';
+                message.style.color = 'red';
+            } else {
+                message.textContent = 'El número es menor. Intenta nuevamente.';
+                message.style.color = 'red';
+            }
+        }
+
+        guessButton.addEventListener('click', verificarAdivinanza);
+        iniciarJuego();
+    </script>
+    <h1>&copy; William Bustamante Bernal y Kevin René Armenta Valenzuela</h1>
+</body>
+</html>
